@@ -41,6 +41,10 @@ public class BakedGood
         return this.price * count;
     }
     
+    public void changePrice(double newPrice){
+        this.price = newPrice;
+    }
+    
     // toString
     public String toString() {
         return "baked good: " + this.name + " (" + this.quantity + " @ $" + this.price + ")";
@@ -53,10 +57,8 @@ public class BakedGood
         croissant.increaseQuantity(12);
         System.out.println(croissant);
         
-        //croissant.increaseQuantity(3);
-        //System.out.println(croissant);
-        
-        System.out.println(croissant.purchase(3));
+        croissant.changePrice(15.0);
         System.out.println(croissant);
+        
     }
 }
