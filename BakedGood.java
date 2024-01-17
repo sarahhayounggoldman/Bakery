@@ -31,6 +31,16 @@ public class BakedGood
         this.quantity += count;
     }
     
+    // instance method to purchase baked goods
+    public double purchase (int count) {
+        if (count > this.quantity) {
+            throw new IllegalArgumentException("you can't buy more than what we have in stock, sorry!");
+        }
+        
+        this.quantity -= count;
+        return this.price * count;
+    }
+    
     // toString
     public String toString() {
         return "baked good: " + this.name + " (" + this.quantity + " @ $" + this.price + ")";
@@ -43,7 +53,10 @@ public class BakedGood
         croissant.increaseQuantity(12);
         System.out.println(croissant);
         
-        croissant.increaseQuantity(3);
+        //croissant.increaseQuantity(3);
+        //System.out.println(croissant);
+        
+        System.out.println(croissant.purchase(3));
         System.out.println(croissant);
     }
 }
